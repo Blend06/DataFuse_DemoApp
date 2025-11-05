@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distributed Computation Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1> Distributed Computation Demo</h1>
+        <p>Submit a list of numbers for parallel processing!</p>
+        
+        <!-- Job Submission Form -->
+        <div class="form-section">
+            <h2>Submit New Job</h2>
+            <form id="jobForm">
+                <div class="input-group">
+                    <label for="numbers">Numbers (comma-separated):</label>
+                    <input 
+                        type="text" 
+                        id="numbers" 
+                        placeholder="1,2,3,4,5,10,15,20"
+                        value="1,2,3,4,5,10,15,20"
+                    >
+                </div>
+                
+                <div class="input-group">
+                    <label for="operation">Operation:</label>
+                    <select id="operation">
+                        <option value="square">Square (x²)</option>
+                        <option value="factorial">Factorial (x!)</option>
+                        <option value="double">Double (x×2)</option>
+                    </select>
+                </div>
+                
+                <button type="submit" id="submitBtn">Start Computation</button>
+            </form>
+        </div>
+
+        <!-- Job Status Display -->
+        <div class="status-section" id="statusSection" style="display: none;">
+            <h2>Job Status</h2>
+            <div class="job-info">
+                <p><strong>Job ID:</strong> <span id="jobId"></span></p>
+                <p><strong>Status:</strong> <span id="jobStatus"></span></p>
+            </div>
+            
+            <!-- Progress Bar -->
+            <div class="progress-container" id="progressContainer" style="display: none;">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <p class="progress-text" id="progressText">0%</p>
+            </div>
+            
+            <!-- Results Display -->
+            <div class="results-container" id="resultsContainer" style="display: none;">
+                <h3>Results:</h3>
+                <div id="results"></div>
+            </div>
+            
+            <!-- Error Display -->
+            <div class="error-container" id="errorContainer" style="display: none;">
+                <h3>Error:</h3>
+                <p id="errorMessage"></p>
+            </div>
+        </div>
+
+        <!-- Active Jobs List -->
+        <div class="jobs-section">
+            <h2>Recent Jobs</h2>
+            <div id="jobsList"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
