@@ -1,0 +1,81 @@
+Programming Concepts - Core Questions & Answers
+
+1. Complexity: Big-O, Big-Θ, and Big-Ω
+
+Big-O is like the worst-case scenario - it tells you the maximum time your algorithm might take. Big-Θ is the average case, and Big-Ω is the best case. 
+
+O(n log n) vs O(n^2) in practice: O(n log n) is way better for large datasets.
+Think sorting 1000 items - O(n log n) might do ~10,000 operations while O(n^2) does 1,000,000. That's the difference between instant and waiting around.
+
+2. Data Structures: When to use what
+
+Array/List: Fast access by index, but inserting in the middle is slow
+Linked List: Easy to insert/delete anywhere, but you can't jump to position 100 directly
+Hash Map: Super fast lookups by key, but no ordering and uses more memory
+Tree: Keeps data sorted and balanced lookups, but more complex to implement
+
+I pick based on what you I most - lots of lookups? Hash map. Need order? Array. Lots of insertions? Linked list.
+
+3. Immutability & State
+
+Mutable data can be changed after creation (like a regular variable). Immutable data can't be modified - you create new versions instead.
+
+Immutability helps because you never worry about something changing your data behind your back. In multi-threaded code, it prevents
+those nasty bugs where two threads mess with the same data simultaneously.
+
+4. Memory Model: Stack vs Heap
+
+Stack is like a neat pile of plates - last in, first out. It stores local variables and function calls. Fast but limited space.
+
+Heap is like a messy warehouse where you can store big things anywhere. Objects and dynamic data live here. Slower access but lots of space.
+
+Scope determines where variables are visible. Lifetime is how long they exist. Stack variables die when functions end, heap objects
+stick around until garbage collected.
+
+5. OOP Basics
+
+Encapsulation: Hide internal details, expose only what's needed (like a car - you use pedals, not engine internals)
+Inheritance: Child classes get parent features (SportsCar inherits from Car)
+Polymorphism: Same interface, different behavior (both Dog and Cat can "speak" differently)
+
+Composition over inheritance: Instead of "Car IS-A Vehicle", think "Car HAS-A Engine". More flexible and less tangled.
+
+6. APIs & Contracts: Idempotent Operations
+
+Idempotent means doing the same thing multiple times gives the same result.
+
+GET requests are idempotent - asking for user info 5 times doesn't change anything.
+POST usually isn't - creating a user 5 times makes 5 users.
+PUT is idempotent - updating a user to the same values multiple times is fine.
+
+7. Concurrency vs Parallelism
+
+Concurrency: Juggling multiple tasks (like switching between cooking and answering phone)
+Parallelism: Actually doing multiple things at once (like having two chefs cooking)
+
+Race conditions happen when threads compete for the same resource unpredictably. Deadlocks occur when threads wait for each other forever.
+
+Fix with locks, atomic operations, or better design that avoids shared state.
+
+8. Databases: SQL vs NoSQL
+
+SQL: Used when I need strict relationships, transactions, and complex queries. Like accounting systems.
+NoSQL: Used for flexible data, massive scale, or when I don't know the structure upfront. Like social media posts.
+
+Indexes speed up searches but slow down writes. It's like a book index - great for finding stuff, but you have to update it when adding pages.
+
+9. Testing Types
+
+Unit tests: Test individual functions in isolation. Fast and focused.
+Integration tests: Test how components work together. Catches interface problems.
+End-to-end tests: Test the whole user journey. Slow but catches real-world issues.
+
+Mock external dependencies in unit tests, but don't mock everything - you might test your mocks instead of real behavior.
+
+10. Version Control: Merge vs Rebase
+
+Merge: Combines branches and keeps history of both. Creates a merge commit. Honest about what happened.
+Rebase: Replays your changes on top of the target branch. Makes a clean, linear history.
+
+Use merge for shared branches (keeps context). Use rebase for personal feature branches (cleaner history). 
+Never rebase shared branches - it rewrites history and confuses teammates.
