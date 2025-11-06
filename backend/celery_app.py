@@ -16,12 +16,12 @@ redis_client = redis.Redis(host='redis', port=6379, decode_responses=True)
 
 def simulate_heavy_computation(number: int, operation: str) -> int:
     """Simulate a CPU-intensive task"""
-    time.sleep(0.5)  # Pretend this takes time
+    time.sleep(0.5)  
     
     if operation == "square":
         return number ** 2
     elif operation == "factorial":
-        return math.factorial(min(number, 10))  # Limit to prevent huge numbers
+        return math.factorial(min(number, 10))  
     else:
         return number * 2
 
