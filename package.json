@@ -1,0 +1,31 @@
+{
+  "name": "distributed-computation-demo",
+  "version": "1.0.0",
+  "description": "FastAPI + Celery + Redis distributed computation demo with real-time progress tracking",
+  "scripts": {
+    "test:e2e": "cypress run",
+    "test:e2e:open": "cypress open",
+    "test:e2e:ci": "cypress run --browser chrome --headless",
+    "docker:up": "docker-compose up --build",
+    "docker:down": "docker-compose down",
+    "docker:test": "docker-compose up -d && npm run test:e2e:ci && docker-compose down"
+  },
+  "keywords": [
+    "fastapi",
+    "celery",
+    "redis",
+    "docker",
+    "distributed-computing",
+    "real-time",
+    "cypress",
+    "e2e-testing"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^13.6.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
