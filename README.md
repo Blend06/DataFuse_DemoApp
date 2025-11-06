@@ -1,8 +1,8 @@
-# 🚀 Distributed Computation Demo
+# Distributed Computation Demo
 
 A complete full-stack application demonstrating distributed computing with real-time progress tracking, built with FastAPI, Celery, Redis, and modern DevOps practices.
 
-## 🏗️ Architecture
+## Architecture
 
 - **Frontend**: Component-based JavaScript (React-style) with Nginx
 - **Backend**: FastAPI REST API with async endpoints
@@ -10,7 +10,7 @@ A complete full-stack application demonstrating distributed computing with real-
 - **Database**: Redis (message broker + temporary storage)
 - **Infrastructure**: Docker Compose orchestration
 
-## ⚡ Quick Start
+## Quick Start
 
 ### Prerequisites
 ```bash
@@ -26,7 +26,7 @@ node --version
 npm --version
 ```
 
-### 🚀 Run the Application
+### Run the Application
 
 1. **Clone and navigate to project:**
    ```bash
@@ -49,7 +49,7 @@ npm --version
    - **API Documentation**: http://localhost:8000/docs
    - **Debug Endpoint**: http://localhost:8000/debug/jobs
 
-## 🧪 How to Test the Application
+## How to Test the Application
 
 ### Manual Testing
 1. **Submit a computation job:**
@@ -71,24 +71,8 @@ npm --version
    - Click on job history to view previous results
    - Test form validation with invalid inputs
 
-4. **API Testing:**
-   ```bash
-   # Test API directly
-   curl http://localhost:8000/
-   
-   # Submit job via API
-   curl -X POST http://localhost:8000/jobs \
-     -H "Content-Type: application/json" \
-     -d '{"numbers": [1,2,3], "operation": "square"}'
-   
-   # Check job status (replace JOB_ID)
-   curl http://localhost:8000/jobs/JOB_ID
-   
-   # View all jobs (debug)
-   curl http://localhost:8000/debug/jobs
-   ```
 
-## 🛠️ Development Commands
+## Development Commands
 
 ### Docker Operations
 ```bash
@@ -167,7 +151,7 @@ python -m http.server 3000
 npx serve -p 3000
 ```
 
-## 🧪 Testing
+## Testing
 
 ### Automated Testing Setup
 ```bash
@@ -240,14 +224,14 @@ node test-cypress-quick.js
 - [ ] Debug endpoint shows Redis data
 
 **Test Coverage:**
-- ✅ **Application Loading** - UI elements and page structure
-- ✅ **Form Validation** - Input validation and error handling  
-- ✅ **Job Submission** - API integration and job creation
-- ✅ **Real-time Updates** - Status polling and progress tracking
-- ✅ **Results Display** - Data formatting and presentation
-- ✅ **Job History** - Navigation and data persistence
-- ✅ **Operations** - Different computation types
-- ✅ **End-to-End Workflows** - Complete user journeys
+- **Application Loading** - UI elements and page structure
+- **Form Validation** - Input validation and error handling  
+- **Job Submission** - API integration and job creation
+- **Real-time Updates** - Status polling and progress tracking
+- **Results Display** - Data formatting and presentation
+- **Job History** - Navigation and data persistence
+- **Operations** - Different computation types
+- **End-to-End Workflows** - Complete user journeys
 
 ## CI/CD Pipeline
 
@@ -269,7 +253,7 @@ The project includes a comprehensive GitHub Actions pipeline that:
 3. **e2e-tests**: Full application E2E testing with Cypress
 4. **code-quality**: Code linting and syntax validation
 
-## 📡 API Endpoints
+## API Endpoints
 
 ### Job Management
 - `POST /jobs` - Submit new computation job
@@ -300,7 +284,7 @@ The project includes a comprehensive GitHub Actions pipeline that:
   curl http://localhost:8000/
   ```
 
-## 📋 Complete Command Reference
+## Complete Command Reference
 
 ### Initial Setup
 ```bash
@@ -404,7 +388,7 @@ docker-compose exec redis redis-cli save
 
 ---
 
-## 🎯 Quick Start Summary
+## Quick Start Summary
 
 **For Impatient Developers:**
 ```bash
@@ -430,7 +414,7 @@ docker-compose -f docker-compose.prod.yml up --build -d
 # Set up monitoring and logging
 ```
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
@@ -495,20 +479,20 @@ docker-compose up --scale worker=2
 docker system prune -a
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 DataFuse_DemoApp/
-├── 📁 backend/                 # FastAPI backend service
-│   ├── 📁 tests/              # Backend unit tests
+├── backend/                 # FastAPI backend service
+│   ├── tests/              # Backend unit tests
 │   │   ├── __init__.py
 │   │   └── test_api.py        # API endpoint tests
 │   ├── Dockerfile             # Backend container config
 │   ├── requirements.txt       # Python dependencies
 │   ├── main.py               # FastAPI application
 │   └── celery_app.py         # Celery worker tasks
-├── 📁 frontend/               # Frontend application
-│   ├── 📁 components/         # JavaScript components
+├── frontend/               # Frontend application
+│   ├── components/         # JavaScript components
 │   │   ├── JobSubmitter.js    # Form handling
 │   │   ├── JobStatusDisplay.js # Status updates
 │   │   ├── JobPoller.js       # Background polling
@@ -517,15 +501,15 @@ DataFuse_DemoApp/
 │   ├── index.html            # Main UI template
 │   ├── style.css             # Application styling
 │   └── app.js                # Main application controller
-├── 📁 cypress/                # E2E testing
-│   ├── 📁 e2e/
+├── cypress/                # E2E testing
+│   ├── e2e/
 │   │   └── app.cy.js         # Cypress test specs
-│   ├── 📁 support/
+│   ├── support/
 │   │   ├── commands.js       # Custom Cypress commands
 │   │   └── e2e.js           # Test configuration
-│   └── 📁 screenshots/       # Test failure screenshots
-├── 📁 .github/               # CI/CD pipeline
-│   └── 📁 workflows/
+│   └── screenshots/       # Test failure screenshots
+├── .github/               # CI/CD pipeline
+│   └── workflows/
 │       └── ci.yml            # GitHub Actions workflow
 ├── cypress.config.js         # Cypress configuration
 ├── docker-compose.yml        # Service orchestration
@@ -536,7 +520,7 @@ DataFuse_DemoApp/
 └── README.md                # This file
 ```
 
-## 🚀 Deployment
+## Deployment
 
 ### Production Considerations
 ```bash
@@ -564,7 +548,7 @@ docker-compose logs -f worker
 # Use nginx upstream for multiple backend instances
 ```
 
-## 📊 Monitoring
+## Monitoring
 
 ### Health Checks
 ```bash

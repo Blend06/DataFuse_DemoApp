@@ -20,8 +20,6 @@
     "cypress",
     "e2e-testing"
   ],
-  "author": "Your Name",
-  "license": "MIT",
   "devDependencies": {
     "cypress": "^13.6.0"
   },
